@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- js-->
+  <link rel="stylesheet" href="app.js">
+</head>
+<body>
+
+  <!-- Fixed Header -->
+  <div class="fixed-header">
+    <div class="header">
+      <h1>Habit Tracker</h1>
+      <div>
+        <label for="month">Month:</label>
+        <input type="text" id="month" placeholder="e.g. January 2026">
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrollable Table Area -->
+  <div class="content">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Habits</th>
+            <script>
+              for (let i = 1; i <= 31; i++) {
+                document.write(`<th>${i}</th>`);
+              }
+            </script>
+          </tr>
+        </thead>
+
+        <tbody>
+          <script>
+            const habits = [
+              "Exercise",
+              "Reading",
+              "Meditation",
+              "Healthy Eating",
+              "Study",
+              "Sleep on Time",
+              "Drink Water",
+              "No Junk Food",
+              "Practice Skill",
+              "Journaling"
+            ];
+
+            habits.forEach(habit => {
+              document.write("<tr>");
+              document.write(`<td class="habit">${habit}</td>`);
+              for (let d = 1; d <= 31; d++) {
+                document.write('<td><input type="checkbox"></td>');
+              }
+              document.write("</tr>");
+            });
+          </script>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Fixed Footer -->
+  <div class="fixed-footer">
+    Simple habit tracker – mark each day you complete a habit.
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+</body>
+</html>
