@@ -45,11 +45,12 @@ body {
 /* Table Wrapper */
 .table-wrapper {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on Android */
 }
 
 /* Table */
 table {
-  width: 100%;
+  min-width: 900px;   /* forces horizontal scroll on mobile */
   border-collapse: collapse;
   background: #fff;
 }
